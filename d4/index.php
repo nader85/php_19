@@ -23,5 +23,7 @@ echo "Welcome $name $surname, $email";
             <input type="email" name="email" placeholder="Email"></br>
             <button type="submit" name="submit">Add</button>
         </form>
+
+        <a href="index.php?name=Digital&surname=School&email=school@gmai.com">Linku per GET</a>
 </body>
 </html>
