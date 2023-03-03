@@ -1,0 +1,6 @@
+Task     Status
+Buy milk     not done
+Pick up dry cleaning     not done
+Finish report     done
+Submit expenses     not done
+Book flight to Barcelona     done

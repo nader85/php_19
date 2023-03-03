@@ -5,10 +5,7 @@ try {
   $username = "user";
   $tempPass = "user";
   $password = password_hash($tempPass, PASSWORD_DEFAULT);
-  // Insert statment for SQL 
-  $sql = "INSERT INTO users (username, pass) VALUES ('$username', '$password')";
-  // Execute the statement using the exec() method of the PDO object
-  $pdo->exec($sql);
+
 
   echo "New record created successfully.";
 
