@@ -1,6 +1,6 @@
 <?php
             include_once('config.php');
-            $sql = "SELECT * FROM users";
+            $sql = "SELECT products.id as id, products.name as name, categories.name as cname  FROM products JOIN categories ON products.category_id = categories.id WHERE products.category_id = 1";
             $getUsers = $con->prepare($sql);
             $getUsers->execute();
             $users=$getUsers->fetchAll();
@@ -37,16 +37,16 @@
         <table style="width: 90%">
             <tr>
                 <th>Id</th>
-                <th>Username</th>
-                <th>Email</th>
+                <th>Product Name</th>
+                <th>Category</th>
             </tr>
             <?php
                 foreach($users as $user)
                 { ?>
                     <tr>
                         <td><?php echo $user['id']; ?></td>
-                        <td><?php echo $user['username']; ?></td>
-                        <td><?php echo $user['email']; ?></td>
+                        <td><?php echo $user['name']; ?></td>
+                        <td><?php echo $user['cname']; ?></td>
                     </tr>
           <?php }
             ?>
