@@ -1,6 +1,12 @@
 <?php
             include_once('config.php');
-            $sql = "SELECT students.name as name, grades.grade as grade, subjects.name as subject, subjects.teacher as teacher FROM students JOIN grades ON students.id = grades.student_id JOIN subjects ON grades.subject_id = subjects.id WHERE students.id = '1'";
+            $sql = "SELECT students.name as name, grades.grade as grade, 
+            subjects.name as subject, 
+            subjects.teacher as teacher FROM students 
+            JOIN grades ON students.id = grades.student_id 
+            JOIN subjects ON grades.subject_id = subjects.id
+            WHERE students.id='1'";
+        
             $getUsers = $con->prepare($sql);
             $getUsers->execute();
             $users=$getUsers->fetchAll();

@@ -39,14 +39,16 @@
                 <th>Id</th>
                 <th>Username</th>
                 <th>Email</th>
+                <th>Actions</th>
             </tr>
             <?php
                 foreach($users as $user)
                 { ?>
                     <tr>
-                        <td><?php echo $user['id']; ?></td>
+                        <td><?php echo $user['id']; $id=$user['id']?></td>
                         <td><?php echo $user['username']; ?></td>
                         <td><?php echo $user['email']; ?></td>
+                        <td><?php echo "<a href='deleteUser.php?id=$id'>Delete</a>"; echo "<br>"; echo "<a href='editUser.php?id=$id'>Update</a>"; ?></td>
                     </tr>
           <?php }
             ?>
