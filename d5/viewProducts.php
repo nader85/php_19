@@ -39,6 +39,7 @@
                 <th>Id</th>
                 <th>Product Name</th>
                 <th>Category</th>
+                <th>Actions</th>
             </tr>
             <?php
                 foreach($users as $user)
@@ -47,6 +48,7 @@
                         <td><?php echo $user['id']; ?></td>
                         <td><?php echo $user['name']; ?></td>
                         <td><?php echo $user['cname']; ?></td>
+                        <td><?php echo "<a href='editProduct.php?id=$user[id]'>Update</a>" ?></td>
                     </tr>
           <?php }
             ?>

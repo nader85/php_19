@@ -2,10 +2,10 @@
             include_once('config.php');
             $sql = "SELECT students.name as name, grades.grade as grade, 
             subjects.name as subject, 
-            subjects.teacher as teacher FROM students 
+            subjects.teacher as teacher,
+            grades.id as gid FROM students 
             JOIN grades ON students.id = grades.student_id 
-            JOIN subjects ON grades.subject_id = subjects.id
-            WHERE students.id='1'";
+            JOIN subjects ON grades.subject_id = subjects.id";
         
             $getUsers = $con->prepare($sql);
             $getUsers->execute();
@@ -46,6 +46,7 @@
                 <th>Subject</th>
                 <th>Teacher</th>
                 <th>Grade</th>
+                <th>Change Grade</th>
             </tr>
             <?php
                 foreach($users as $user)
@@ -55,6 +56,7 @@
                         <td><?php echo $user['subject']; ?></td>
                         <td><?php echo $user['teacher']; ?></td>
                         <td><?php echo $user['grade']; ?></td>
+                        <td><?php echo "<a href='editGrade.php?id=$user[gid]&student=$user[name]&subject=$user[subject]'>Update</a>" ?></td>
                     </tr>
           <?php }
             ?>
